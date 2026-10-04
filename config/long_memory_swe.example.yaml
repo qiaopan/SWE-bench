@@ -1,0 +1,67 @@
+# Template only: pin actual Azure deployment names and package revisions before a run.
+experiment:
+  name: swebench-lite50-long-memory
+  mode: enabled
+  order_id: dev-order-a
+  database_path: outputs/long-memory/dev-order-a.sqlite
+  max_candidates: 8
+  max_guidance_chars: 1800
+  minimum_confidence: 0.55
+
+dataset:
+  name: SWE-bench/SWE-bench_Lite
+  split: test
+  # Single-repository chronological stream: 100 of the 114 django/django Lite test ids,
+  # drawn with seed 20261004 and sorted by issue creation time
+  # (scripts/sample_lite_subset.py --repo django/django --order created_at). Batch 1 is
+  # the earliest 50 (2019-01 to 2020-12); batch 2 (2020-12 to 2023-07) continues the
+  # same memory stream only if the budget allows. Both arms use the same list and order.
+  repo: django/django
+  pool_size: 114
+  subset_size: 50
+  instance_ids_file: config/swebench_lite_django100.json
+  batch: 1
+  # Dev/smoke runs: the 5 sqlfluff Lite dev ids in creation order
+  # (config/swebench_lite_dev_sqlfluff5.json), with their own database; dev memory
+  # never seeds a test run. The earlier random mixed-repo draws
+  # (swebench_lite_sample100.json, swebench_lite_dev_groups.json) are superseded and
+  # kept only as records of the first dev trial.
+
+agent:
+  adapter: mini-swe-agent
+  # mini-SWE-agent v2.0.0 with its benchmarks/swebench.yaml. Generator: gpt-5-nano, for
+  # headroom (gpt-5-mini already solves ~73% of the 37 sampled django ids that are also
+  # in Verified; gpt-5-nano ~41%). gpt-5-nano's only official result is v1.7.0 (34.8% on
+  # Verified, 500 tasks), whose trajectories record no model config; no v2.0.0 nano run
+  # exists, so the model settings copy the official gpt-5-mini v2.0.0 run (Responses API,
+  # reasoning effort and verbosity medium; see run_mini.BASELINE_MODEL_KWARGS). The No
+  # Memory arm is the actual baseline.
+  version: 2.0.0
+  config: benchmarks/swebench.yaml
+  step_limit: 250
+  cost_limit: 3.0
+  command_timeout_seconds: 60
+  generator_deployment: swe-generator-gpt5-nano
+  generator_model: gpt-5-nano-2025-08-07
+  # Azure deployment names are not in litellm's price table; every deployment is
+  # registered in config/litellm_model_registry.json, otherwise cost_limit fails.
+
+memory:
+  # A stronger memory model than the generator, by design (generator and memory roles
+  # are separate, as in phase 1). Reported as a limitation: lessons may carry knowledge
+  # of the stronger model, although they are written only from agent-visible evidence
+  # and injected only when they cite a retrieved lesson.
+  llm_deployment: swe-reflection-gpt5-mini
+  llm_model: gpt-5-mini-2025-08-07
+  # No temperature or reasoning_effort sent (provider default, medium).
+  reasoning_effort: null
+  embedder: jinaai/jina-embeddings-v2-base-code
+  embedder_revision: 516f4baf13dec4ddddda8631e019b5737c8bc250
+  tokenizer_revision: 3baf9e3ac750e76e8edd3019170176884695fb94
+  # These are deliberately local cache paths, never download-on-run paths.
+  model_path: /Users/ma/.cache/huggingface/hub/models--jinaai--jina-embeddings-v2-base-code/snapshots/516f4baf13dec4ddddda8631e019b5737c8bc250
+  tokenizer_path: /Users/ma/.cache/huggingface/hub/models--jinaai--jina-bert-v2-qk-post-norm/snapshots/3baf9e3ac750e76e8edd3019170176884695fb94
+
+evaluation:
+  harness: swe-bench-docker
+  # Harness outcomes are report-only; never include them in reflection input.

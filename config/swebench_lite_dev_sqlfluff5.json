@@ -1,0 +1,37 @@
+{
+  "dataset": "SWE-bench/SWE-bench_Lite",
+  "split": "dev",
+  "revision": "b0dde1093fe417d83b7184254edf8199c1f0dff5",
+  "source_file": "https://huggingface.co/datasets/SWE-bench/SWE-bench_Lite/resolve/b0dde1093fe417d83b7184254edf8199c1f0dff5/data/dev-00000-of-00001.parquet",
+  "source_sha256": "b90bcbfaca1b5f65155500124a977876c264a4003ab384aca4dfc39a54bef89f",
+  "pool_size": 5,
+  "method": "random.Random(seed).sample(sorted(instance_ids), size); sorted by (created_at, instance_id); batches in that order",
+  "seed": 20261004,
+  "size": 5,
+  "batch_size": 5,
+  "python": "3.14.7",
+  "created_utc": "2026-10-04T09:52:12+00:00",
+  "batches": [
+    {
+      "batch": 1,
+      "instance_ids": [
+        "sqlfluff__sqlfluff-1517",
+        "sqlfluff__sqlfluff-1625",
+        "sqlfluff__sqlfluff-1733",
+        "sqlfluff__sqlfluff-1763",
+        "sqlfluff__sqlfluff-2419"
+      ],
+      "repo_counts": {
+        "sqlfluff/sqlfluff": 5
+      },
+      "created_at_range": [
+        "2021-10-06T07:57:35Z",
+        "2022-01-22T12:21:52Z"
+      ]
+    }
+  ],
+  "pool_repo_counts": {
+    "sqlfluff/sqlfluff": 5
+  },
+  "repo_filter": "sqlfluff/sqlfluff"
+}

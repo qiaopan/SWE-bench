@@ -1,0 +1,67 @@
+{
+  "azure/swe-generator-gpt5-mini": {
+    "max_tokens": 128000,
+    "max_input_tokens": 272000,
+    "max_output_tokens": 128000,
+    "input_cost_per_token": 2.5e-07,
+    "cache_read_input_token_cost": 2.5e-08,
+    "output_cost_per_token": 2e-06,
+    "litellm_provider": "azure",
+    "mode": "chat",
+    "supports_function_calling": true,
+    "supports_parallel_function_calling": true,
+    "supports_reasoning": true
+  },
+  "swe-generator-gpt5-mini": {
+    "max_tokens": 128000,
+    "max_input_tokens": 272000,
+    "max_output_tokens": 128000,
+    "input_cost_per_token": 2.5e-07,
+    "cache_read_input_token_cost": 2.5e-08,
+    "output_cost_per_token": 2e-06,
+    "litellm_provider": "azure",
+    "mode": "chat",
+    "supports_function_calling": true,
+    "supports_parallel_function_calling": true,
+    "supports_reasoning": true
+  },
+  "azure/swe-generator-gpt5-nano": {
+    "max_tokens": 128000,
+    "max_input_tokens": 272000,
+    "max_output_tokens": 128000,
+    "input_cost_per_token": 5e-08,
+    "cache_read_input_token_cost": 5e-09,
+    "output_cost_per_token": 4e-07,
+    "litellm_provider": "azure",
+    "mode": "chat",
+    "supports_function_calling": true,
+    "supports_parallel_function_calling": true,
+    "supports_reasoning": true
+  },
+  "swe-generator-gpt5-nano": {
+    "max_tokens": 128000,
+    "max_input_tokens": 272000,
+    "max_output_tokens": 128000,
+    "input_cost_per_token": 5e-08,
+    "cache_read_input_token_cost": 5e-09,
+    "output_cost_per_token": 4e-07,
+    "litellm_provider": "azure",
+    "mode": "chat",
+    "supports_function_calling": true,
+    "supports_parallel_function_calling": true,
+    "supports_reasoning": true
+  },
+  "azure/swe-reflection-gpt5-mini": {
+    "max_tokens": 128000,
+    "max_input_tokens": 272000,
+    "max_output_tokens": 128000,
+    "input_cost_per_token": 2.5e-07,
+    "cache_read_input_token_cost": 2.5e-08,
+    "output_cost_per_token": 2e-06,
+    "litellm_provider": "azure",
+    "mode": "chat",
+    "supports_function_calling": true,
+    "supports_parallel_function_calling": true,
+    "supports_reasoning": true
+  }
+}

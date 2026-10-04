@@ -1,0 +1,98 @@
+{
+  "dataset": "SWE-bench/SWE-bench_Lite",
+  "split": "dev",
+  "revision": "b0dde1093fe417d83b7184254edf8199c1f0dff5",
+  "source_file": "https://huggingface.co/datasets/SWE-bench/SWE-bench_Lite/resolve/b0dde1093fe417d83b7184254edf8199c1f0dff5/data/dev-00000-of-00001.parquet",
+  "source_sha256": "b90bcbfaca1b5f65155500124a977876c264a4003ab384aca4dfc39a54bef89f",
+  "pool_size": 23,
+  "method": "random.Random(seed).sample(sorted(instance_ids), size); batches in draw order",
+  "seed": 20261004,
+  "size": 23,
+  "batch_size": 5,
+  "python": "3.14.7",
+  "created_utc": "2026-10-04T07:01:19+00:00",
+  "batches": [
+    {
+      "batch": 1,
+      "instance_ids": [
+        "pvlib__pvlib-python-1707",
+        "marshmallow-code__marshmallow-1359",
+        "pydicom__pydicom-1413",
+        "pylint-dev__astroid-1196",
+        "pydicom__pydicom-1256"
+      ],
+      "repo_counts": {
+        "pydicom/pydicom": 2,
+        "pvlib/pvlib-python": 1,
+        "marshmallow-code/marshmallow": 1,
+        "pylint-dev/astroid": 1
+      }
+    },
+    {
+      "batch": 2,
+      "instance_ids": [
+        "pylint-dev__astroid-1978",
+        "pvlib__pvlib-python-1854",
+        "pvlib__pvlib-python-1606",
+        "pydicom__pydicom-1139",
+        "pvlib__pvlib-python-1072"
+      ],
+      "repo_counts": {
+        "pvlib/pvlib-python": 3,
+        "pylint-dev/astroid": 1,
+        "pydicom/pydicom": 1
+      }
+    },
+    {
+      "batch": 3,
+      "instance_ids": [
+        "pyvista__pyvista-4315",
+        "sqlfluff__sqlfluff-1733",
+        "sqlfluff__sqlfluff-2419",
+        "pvlib__pvlib-python-1154",
+        "pydicom__pydicom-901"
+      ],
+      "repo_counts": {
+        "sqlfluff/sqlfluff": 2,
+        "pyvista/pyvista": 1,
+        "pvlib/pvlib-python": 1,
+        "pydicom/pydicom": 1
+      }
+    },
+    {
+      "batch": 4,
+      "instance_ids": [
+        "sqlfluff__sqlfluff-1763",
+        "pylint-dev__astroid-1333",
+        "sqlfluff__sqlfluff-1625",
+        "pylint-dev__astroid-1268",
+        "sqlfluff__sqlfluff-1517"
+      ],
+      "repo_counts": {
+        "sqlfluff/sqlfluff": 3,
+        "pylint-dev/astroid": 2
+      }
+    },
+    {
+      "batch": 5,
+      "instance_ids": [
+        "pydicom__pydicom-1694",
+        "marshmallow-code__marshmallow-1343",
+        "pylint-dev__astroid-1866"
+      ],
+      "repo_counts": {
+        "pydicom/pydicom": 1,
+        "marshmallow-code/marshmallow": 1,
+        "pylint-dev/astroid": 1
+      }
+    }
+  ],
+  "pool_repo_counts": {
+    "pvlib/pvlib-python": 5,
+    "pydicom/pydicom": 5,
+    "pylint-dev/astroid": 5,
+    "sqlfluff/sqlfluff": 5,
+    "marshmallow-code/marshmallow": 2,
+    "pyvista/pyvista": 1
+  }
+}

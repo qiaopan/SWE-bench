@@ -1,0 +1,60 @@
+{
+  "dataset": "SWE-bench/SWE-bench_Verified",
+  "split": "test",
+  "revision": "78f471bf655a3137b2e8a75af1501690ec009ec3",
+  "source_file": "https://huggingface.co/datasets/SWE-bench/SWE-bench_Verified/resolve/78f471bf655a3137b2e8a75af1501690ec009ec3/data/test-00000-of-00001.parquet",
+  "source_sha256": "030cfd7f2a704c4c0226e7f104c725a3b41230b1d3517f9c915ad7ea5be3fa25",
+  "pool_size": 231,
+  "method": "random.Random(seed).sample(sorted(instance_ids), size); sorted by (created_at, instance_id); batches in that order",
+  "seed": 20261004,
+  "size": 10,
+  "batch_size": 5,
+  "python": "3.14.7",
+  "created_utc": "2026-10-04T10:31:38+00:00",
+  "batches": [
+    {
+      "batch": 1,
+      "instance_ids": [
+        "django__django-12050",
+        "django__django-12741",
+        "django__django-13279",
+        "django__django-13933",
+        "django__django-14493"
+      ],
+      "repo_counts": {
+        "django/django": 5
+      },
+      "created_at_range": [
+        "2019-11-10T08:53:45Z",
+        "2021-06-05T12:50:25Z"
+      ]
+    },
+    {
+      "batch": 2,
+      "instance_ids": [
+        "django__django-14500",
+        "django__django-15525",
+        "django__django-15695",
+        "django__django-16595",
+        "django__django-16938"
+      ],
+      "repo_counts": {
+        "django/django": 5
+      },
+      "created_at_range": [
+        "2021-06-08T05:08:08Z",
+        "2023-06-03T11:18:11Z"
+      ]
+    }
+  ],
+  "pool_repo_counts": {
+    "django/django": 231
+  },
+  "repo_filter": "django/django",
+  "dev_holdout": {
+    "drawn": 110,
+    "dev_size": 10,
+    "method": "dev = random.Random(seed) second call: sample(sorted(drawn), dev_size); test = the rest"
+  },
+  "role": "dev"
+}
